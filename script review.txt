@@ -1,0 +1,42 @@
+https://jsonplaceholder.typicode.com/posts
+
+https://jsonplaceholder.typicode.com/posts?_limit=5&_page=2
+
+get posts-container, loader, filter
+
+we have to set the limit and the page ↑ check url
+
+// Fetch posts from API   ASYNC
+
+// Show posts in DOM    ASYNC
+    for each post , create the element, [template]
+
+
+check scroll event listener [search]
+    document.documentElement.scrollTop / scrollHeight [stackoverflow]
+  
+  [destructuring] => const {scrollTop, scrollHeight ...} = document.documentElement;
+
+►WHEN WE SCROLL AND REACH WHERE WE WANT,,, CALL showLoading();
+
+// Show loader & fetch more posts
+    show the loader,
+
+    remove the class show, after 1 sec
+
+    after 300ms we want to add new posts, HOW ?
+
+
+►FILTER FETCHED POSTS
+
+add event to filter so anytime we type in anything,, it will call filterPosts()
+
+filterPosts 
+  get what user types .toUpperCase()
+  get all the posts and 
+    forEach post 
+      if post.title .innerText or post.body .innerText .toUpperCase()
+      indexOf(term) > -1 =>  if it doesn't match it returns a -1
+          display the post
+          else
+            do not display the post
